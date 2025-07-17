@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Migra BR - Notícias e Artigos para Imigrantes</title>
+    <!-- CDN do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind: bg-slate-50 */
+            color: #1e293b; /* Tailwind: text-slate-800 */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #3b82f6, #60a5fa); /* Tailwind: from-blue-500 to-blue-400 */
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Seção do Cabeçalho -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">Migra BR</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html#servicos" class="text-slate-700 hover:text-blue-600 font-medium">Serviços</a>
+                <a href="index.html#quem-somos" class="text-slate-700 hover:text-blue-600 font-medium">Quem Somos</a>
+                <a href="index.html#depoimentos" class="text-slate-700 hover:text-blue-600 font-medium">Depoimentos</a>
+                <a href="index.html#informacoes-uteis" class="text-slate-700 hover:text-blue-600 font-medium">Informações Úteis</a>
+                <a href="index.html#calculadora-elegibilidade" class="text-slate-700 hover:text-blue-600 font-medium">Calculadora</a>
+                <a href="index.html#quiz-imigrante" class="text-slate-700 hover:text-blue-600 font-medium">Quiz</a>
+                <a href="index.html#formulario-dinamico" class="text-slate-700 hover:text-blue-600 font-medium">Assistente Migratório</a>
+                <a href="blog.html" class="text-blue-600 font-medium">Blog</a> <!-- Link ativo para o blog -->
+                <a href="faq.html" class="text-slate-700 hover:text-blue-600 font-medium">FAQ</a>
+                <a href="index.html#contato" class="text-slate-700 hover:text-blue-600 font-medium">Contato</a>
+            </nav>
+            <!-- Botão do Menu Mobile (Hamburger) - Funcionalidade JS não incluída nesta página dedicada para simplicidade -->
+            <button class="md:hidden text-slate-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Principal do Blog -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-slate-800">Nosso Blog: Notícias e Guias para Imigrantes</h1>
+            <p class="text-lg text-center text-slate-700 mb-12 max-w-3xl mx-auto">
+                Explore nossos artigos mais recentes e guias completos sobre imigração, naturalização, vida no Brasil e muito mais. Mantenha-se informado!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exemplo de Card de Post do Blog 1 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Visto+de+Trabalho" alt="Imagem do Blog Post: Visto de Trabalho" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Guia Completo para Obter seu Visto de Trabalho no Brasil</h3>
+                    <p class="text-slate-600 text-sm mb-4">Descubra os requisitos, documentos e etapas para conseguir seu visto de trabalho e iniciar sua carreira no Brasil. Um passo a passo essencial.</p>
+                    <a href="blog-post-1.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <!-- Exemplo de Card de Post do Blog 2 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Naturalizacao+BR" alt="Imagem do Blog Post: Naturalização Brasileira" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Naturalização Brasileira: Mitos e Verdades</h3>
+                    <p class="text-slate-600 text-sm mb-4">Desvendamos os principais mitos sobre o processo de naturalização e esclarecemos as verdades para você. Informação clara para sua decisão.</p>
+                    <a href="blog-post-2.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <!-- Exemplo de Card de Post do Blog 3 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=SUS+Imigrantes" alt="Imagem do Blog Post: SUS para Imigrantes" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Como o SUS Funciona para Imigrantes no Brasil</h3>
+                    <p class="text-slate-600 text-sm mb-4">Entenda seus direitos de acesso à saúde pública no Brasil e como utilizar o Sistema Único de Saúde (SUS). Sua saúde é prioridade.</p>
+                    <a href="blog-post-3.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <!-- Você pode adicionar mais cards de posts aqui -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Morar+no+Brasil" alt="Imagem do Blog Post: Morar no Brasil" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Dicas Essenciais para Morar no Brasil: Adaptação e Cultura</h3>
+                    <p class="text-slate-600 text-sm mb-4">Um guia prático para imigrantes sobre como se adaptar à cultura brasileira, encontrar moradia e navegar no dia a dia.</p>
+                    <a href="blog-post-4.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=CPF+no+Brasil" alt="Imagem do Blog Post: CPF no Brasil" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">CPF no Brasil: Guia Completo para Imigrantes</h3>
+                    <p class="text-slate-600 text-sm mb-4">Aprenda a tirar seu CPF, um documento essencial para qualquer atividade no Brasil, desde abrir conta bancária até alugar imóvel.</p>
+                    <a href="blog-post-5.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Educação+BR" alt="Imagem do Blog Post: Educação no Brasil" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Educação no Brasil para Filhos de Imigrantes: O Que Você Precisa Saber</h3>
+                    <p class="text-slate-600 text-sm mb-4">Informações sobre o sistema educacional brasileiro, matrícula em escolas e universidades para crianças e jovens imigrantes.</p>
+                    <a href="blog-post-6.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Paginação (opcional, para um blog maior) -->
+            <div class="flex justify-center mt-12 space-x-4">
+                <a href="#" class="btn-primary bg-gray-300 text-gray-800 hover:bg-gray-400">Anterior</a>
+                <a href="#" class="btn-primary">1</a>
+                <a href="#" class="btn-primary bg-gray-300 text-gray-800 hover:bg-gray-400">2</a>
+                <a href="#" class="btn-primary bg-gray-300 text-gray-800 hover:bg-gray-400">3</a>
+                <a href="#" class="btn-primary bg-gray-300 text-gray-800 hover:bg-gray-400">Próximo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato (rodapé simplificado para páginas dedicadas) -->
+    <section id="contato" class="py-16 md:py-24 bg-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">Pronto para Começar sua Jornada?</h2>
+            <p class="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
+                Nossa equipe está pronta para te ajudar em cada passo do caminho. Entre em contato e tire suas dúvidas!
+            </p>
+            <a href="index.html#contato" class="btn-primary">Fale Conosco Agora</a>
+        </div>
+    </section>
+
+    <!-- Seção do Rodapé -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Migra BR. Todos os direitos reservados.</p>
+            <p class="mb-2">Um projeto de: Evoluzion Startup</p>
+            <p>Alameda Rio Negro, 503 Sl. 2020 - Barueri/SP - 06454-000</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-300 hover:text-blue-400">Política de Privacidade</a>
+                <a href="#" class="text-slate-300 hover:text-blue-400">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
