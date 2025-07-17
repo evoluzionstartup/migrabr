@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migra BR - Sua Jornada no Brasil Começa Aqui</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind: bg-slate-50 */
+            color: #1e293b; /* Tailwind: text-slate-800 */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #3b82f6, #60a5fa); /* Tailwind: from-blue-500 to-blue-400 */
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out;
+        }
+        /* Estilo para o botão flutuante */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .floating-cta .btn-whatsapp {
+            @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out flex items-center justify-center;
+        }
+        .floating-cta .btn-contact {
+            @apply bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-3xl transition duration-300 ease-in-out flex items-center justify-center;
+        }
+        /* Estilos para o Quiz */
+        .quiz-option-btn {
+            @apply bg-blue-100 text-blue-800 border border-blue-300 py-3 px-5 rounded-lg text-lg font-medium hover:bg-blue-200 transition duration-200 ease-in-out w-full text-left;
+        }
+        .quiz-option-btn.selected {
+            @apply bg-blue-600 text-white border-blue-600;
+        }
+        .progress-bar-container {
+            @apply w-full bg-gray-200 rounded-full h-2.5 mb-6;
+        }
+        .progress-bar {
+            @apply bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-out;
+        }
+
+        /* Estilos para o Formulário Dinâmico */
+        .dynamic-form-option-btn {
+            @apply bg-gray-100 text-gray-800 border border-gray-300 py-3 px-5 rounded-lg text-lg font-medium hover:bg-gray-200 transition duration-200 ease-in-out w-full text-left;
+        }
+        .dynamic-form-option-btn.selected {
+            @apply bg-blue-600 text-white border-blue-600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Migra BR</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#servicos" class="text-slate-700 hover:text-blue-600 font-medium">Serviços</a>
+                <a href="#quem-somos" class="text-slate-700 hover:text-blue-600 font-medium">Quem Somos</a>
+                <a href="#depoimentos" class="text-slate-700 hover:text-blue-600 font-medium">Depoimentos</a>
+                <a href="#informacoes-uteis" class="text-slate-700 hover:text-blue-600 font-medium">Informações Úteis</a>
+                <a href="#calculadora-elegibilidade" class="text-slate-700 hover:text-blue-600 font-medium">Calculadora</a>
+                <a href="#quiz-imigrante" class="text-slate-700 hover:text-blue-600 font-medium">Quiz</a>
+                <!-- Novo link de navegação para Formulário Dinâmico -->
+                <a href="#formulario-dinamico" class="text-slate-700 hover:text-blue-600 font-medium">Assistente Migratório</a>
+                <a href="#contato" class="text-slate-700 hover:text-blue-600 font-medium">Contato</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-slate-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 md:py-32 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Sua Jornada no Brasil Começa Aqui
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">
+                Facilitamos seu processo de imigração e regularização com segurança, agilidade e suporte humanizado.
+            </p>
+            <a href="#contato" class="btn-primary">
+                Fale com Nossos Especialistas
+            </a>
+        </div>
+    </section>
+
+    <!-- Services/Benefits Section -->
+    <section id="servicos" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Por Que Escolher a Migra BR?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 2.757 1.122 5.257 2.938 7.062M12 21v-7m0 0l3-3m-3 3l-3-3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-800">98% de Sucesso</h3>
+                    <p class="text-slate-600">Histórico comprovado de sucesso na regularização de nossos clientes.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-800">Agilidade e Eficiência</h3>
+                    <p class="text-slate-600">Processos otimizados para sua regularização no menor tempo possível.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.3.356-1.857m0 0A2.99 2.99 0 017 12h10c.02.01.04.02.06.03m0 0A9.912 9.912 0 0120 10c0-4.418-4.03-8-9-8A8.962 8.962 0 007 6.354M7 6.354V10m0 0H5.5c-.552 0-1 .448-1 1v2a1 1 0 001 1H7m0-4.354a7.971 7.971 0 00-.535-1.94M12 16z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-800">Suporte Multilíngue</h3>
+                    <p class="text-slate-600">Atendimento em português, inglês, espanhol e francês para sua comodidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="quem-somos" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Nossa+Equipe" alt="Nossa Equipe Migra BR" class="rounded-xl shadow-lg w-full h-auto">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-800">Quem Somos</h2>
+                <p class="text-lg text-slate-700 mb-4">
+                    A Migra BR nasceu com a missão de empoderar imigrantes no Brasil, transformando a realidade através do acesso facilitado aos seus direitos. Somos apaixonados por movimento e buscamos tornar os processos migratórios cada vez mais simples e acessíveis.
+                </p>
+                <p class="text-lg text-slate-700">
+                    Nossa equipe multidisciplinar está pronta para oferecer um suporte completo e humanizado, garantindo que sua adaptação e regularização no país tropical sejam tranquilas e seguras.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">O Que Nossos Clientes Dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <p class="text-slate-700 italic mb-4">"A Migra BR foi fundamental para minha naturalização. Processo rápido, transparente e com um suporte incrível do início ao fim!"</p>
+                    <p class="font-semibold text-slate-800">- Maria S., Portugal</p>
+                </div>
+                <div class="card">
+                    <p class="text-slate-700 italic mb-4">"Consegui minha residência permanente sem burocracia. A equipe é super atenciosa e resolveu todas as minhas dúvidas."</p>
+                    <p class="font-semibold text-slate-800">- Jean-Luc D., França</p>
+                </div>
+                <div class="card">
+                    <p class="text-slate-700 italic mb-4">"Recomendo a Migra BR de olhos fechados! Profissionalismo e eficiência que superaram minhas expectativas."</p>
+                    <p class="font-semibold text-slate-800">- Carlos R., Angola</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informative Section -->
+    <section id="informacoes-uteis" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Informações Úteis para Imigrantes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Documentos Essenciais para Viver no Brasil</h3>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Para iniciar sua jornada no Brasil, é fundamental ter em mãos alguns documentos chave. Isso inclui o passaporte válido, visto de entrada (se aplicável), e posteriormente, a solicitação da Carteira de Registro Nacional Migratório (CRNM).
+                    </p>
+                    <p class="text-lg text-slate-700">
+                        Nossa equipe pode auxiliar na organização e submissão de toda a documentação necessária para garantir uma transição suave e legal.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Como Alugar um Imóvel no Brasil</h3>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Alugar um imóvel no Brasil pode ter particularidades. Geralmente, são exigidas garantias como fiador, seguro fiança ou caução. É importante estar ciente dos seus direitos e deveres como inquilino.
+                    </p>
+                    <p class="text-lg text-slate-700">
+                        Podemos oferecer orientações sobre o mercado imobiliário local e as melhores práticas para encontrar e alugar sua nova casa com segurança.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Acesso à Saúde e Educação</h3>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Imigrantes no Brasil têm direito a acesso aos serviços públicos de saúde (SUS) e educação. Para isso, a regularização migratória é um passo crucial.
+                    </p>
+                    <p class="text-lg text-slate-700">
+                        Entenda como funciona o sistema de saúde e as opções educacionais para você e sua família, desde o ensino básico até o superior.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Mercado de Trabalho e Empreendedorismo</h3>
+                    <p class="text-lg text-slate-700 mb-4">
+                        O Brasil oferece diversas oportunidades no mercado de trabalho. Para trabalhar legalmente, é necessário ter a situação migratória regularizada e, em muitos casos, um visto de trabalho específico.
+                    </p>
+                    <p class="text-lg text-slate-700">
+                        Se você pensa em empreender, podemos fornecer informações sobre os passos iniciais para abrir um negócio no país.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculadora-elegibilidade" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Calculadora de Elegibilidade para Naturalização</h2>
+            <p class="text-lg text-center text-slate-700 mb-8 max-w-2xl mx-auto">
+                Descubra quando você pode solicitar sua naturalização brasileira. Preencha os campos abaixo para estimar seu tempo de residência.
+            </p>
+            <div class="max-w-xl mx-auto card p-8">
+                <div class="space-y-6">
+                    <div>
+                        <label for="dataChegada" class="block text-sm font-medium text-slate-700 mb-1">Data de Chegada ao Brasil</label>
+                        <input type="date" id="dataChegada" class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="tipoVisto" class="block text-sm font-medium text-slate-700 mb-1">Tipo de Visto/Situação Migratória</label>
+                        <select id="tipoVisto" class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="">Selecione...</option>
+                            <option value="permanente">Residência Permanente (5 anos)</option>
+                            <option value="portugues">Nacional de País de Língua Portuguesa (1 ano)</option>
+                            <option value="casamento">Casamento/União Estável com Brasileiro(a) (1 ano)</option>
+                            <option value="filho">Filho(a) Brasileiro(a) (1 ano)</option>
+                            <option value="investidor">Investidor (4 anos)</option>
+                            <option value="refugiado">Refugiado (4 anos)</option>
+                            <option value="outros">Outros (15 anos)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="diasAusencia" class="block text-sm font-medium text-slate-700 mb-1">Dias de Ausência do Brasil (últimos 12 meses)</label>
+                        <input type="number" id="diasAusencia" value="0" min="0" class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="calcularElegibilidade" class="btn-primary w-full md:w-auto">
+                            Calcular Elegibilidade
+                        </button>
+                    </div>
+                    <div id="resultadoCalculadora" class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 hidden">
+                        <p class="font-semibold text-lg mb-2">Resultado da Elegibilidade:</p>
+                        <p id="mensagemResultado"></p>
+                        <p class="text-sm mt-2">Lembre-se: Esta é uma estimativa. Consulte um especialista da Migra BR para uma análise detalhada do seu caso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-imigrante" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Quiz: Descubra Seu Perfil de Imigrante</h2>
+            <p class="text-lg text-center text-slate-700 mb-8 max-w-2xl mx-auto">
+                Responda algumas perguntas rápidas para entender melhor seu perfil migratório e os próximos passos da sua jornada no Brasil!
+            </p>
+            <div class="max-w-xl mx-auto card p-8">
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <div id="quizContainer">
+                    <!-- Questions will be loaded here by JavaScript -->
+                    <p id="quizQuestion" class="text-xl font-semibold mb-6 text-slate-800"></p>
+                    <div id="quizOptions" class="space-y-4">
+                        <!-- Options will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                <div id="quizResult" class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 hidden">
+                    <p class="font-semibold text-xl mb-3">Seu Perfil de Naturalização:</p>
+                    <p id="quizResultMessage" class="text-lg mb-4"></p>
+                    <p class="text-sm">Esta é uma análise preliminar. Para uma avaliação completa e personalizada, entre em contato com a Migra BR.</p>
+                    <button id="restartQuiz" class="btn-primary mt-6">Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Form Section -->
+    <section id="formulario-dinamico" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Assistente Migratório Interativo</h2>
+            <p class="text-lg text-center text-slate-700 mb-8 max-w-2xl mx-auto">
+                Responda algumas perguntas para que possamos entender melhor sua situação e oferecer as informações mais relevantes para sua jornada no Brasil.
+            </p>
+            <div class="max-w-xl mx-auto card p-8">
+                <div id="dynamicFormContainer">
+                    <!-- Dynamic form content will be loaded here by JavaScript -->
+                    <p id="dynamicFormQuestion" class="text-xl font-semibold mb-6 text-slate-800"></p>
+                    <div id="dynamicFormOptions" class="space-y-4">
+                        <!-- Options/Inputs will be loaded here by JavaScript -->
+                    </div>
+                    <div class="flex justify-between mt-6">
+                        <button id="dynamicFormBackBtn" class="btn-primary bg-gray-500 hover:bg-gray-600 hidden">Voltar</button>
+                        <button id="dynamicFormNextBtn" class="btn-primary ml-auto hidden">Próximo</button>
+                    </div>
+                </div>
+                <div id="dynamicFormResult" class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 hidden">
+                    <p class="font-semibold text-xl mb-3">Sua Recomendação Personalizada:</p>
+                    <p id="dynamicFormResultMessage" class="text-lg mb-4"></p>
+                    <p class="text-sm">Esta é uma orientação inicial. Para uma análise jurídica completa e personalizada, entre em contato com a Migra BR.</p>
+                    <button id="restartDynamicForm" class="btn-primary mt-6">Recomeçar Assistente</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Fale Conosco</h2>
+            <div class="max-w-xl mx-auto card p-8">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">E-mail</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1">WhatsApp com DDD</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Como podemos ajudar você?</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full p-3 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary w-full md:w-auto">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Migra BR. Todos os direitos reservados.</p>
+            <p class="mb-2">Um projeto de: Evoluzion Startup</p>
+            <p>Alameda Rio Negro, 503 Sl. 2020 - Barueri/SP - 06454-000</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-300 hover:text-blue-400">Política de Privacidade</a>
+                <a href="#" class="text-slate-300 hover:text-blue-400">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA Buttons -->
+    <div class="floating-cta">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Migra%20BR." target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+        </a>
+        <a href="#contato" class="btn-contact">
+            <i class="fas fa-comments mr-2"></i> Fale Conosco
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculator Logic
+            const dataChegadaInput = document.getElementById('dataChegada');
+            const tipoVistoSelect = document.getElementById('tipoVisto');
+            const diasAusenciaInput = document.getElementById('diasAusencia');
+            const calcularElegibilidadeBtn = document.getElementById('calcularElegibilidade');
+            const resultadoCalculadoraDiv = document.getElementById('resultadoCalculadora');
+            const mensagemResultadoP = document.getElementById('mensagemResultado');
+
+            calcularElegibilidadeBtn.addEventListener('click', function() {
+                const dataChegadaStr = dataChegadaInput.value;
+                const tipoVisto = tipoVistoSelect.value;
+                const diasAusencia = parseInt(diasAusenciaInput.value);
+
+                if (!dataChegadaStr || !tipoVisto) {
+                    mensagemResultadoP.textContent = "Por favor, preencha a data de chegada e o tipo de visto.";
+                    resultadoCalculadoraDiv.classList.remove('hidden');
+                    return;
+                }
+
+                const dataChegada = new Date(dataChegadaStr + 'T00:00:00'); // Add T00:00:00 to avoid timezone issues
+                let anosMinimosResidencia = 0;
+
+                switch (tipoVisto) {
+                    case 'permanente':
+                        anosMinimosResidencia = 5;
+                        break;
+                    case 'portugues':
+                    case 'casamento':
+                    case 'filho':
+                        anosMinimosResidencia = 1;
+                        break;
+                    case 'investidor':
+                    case 'refugiado':
+                        anosMinimosResidencia = 4;
+                        break;
+                    case 'outros':
+                        anosMinimosResidencia = 15;
+                        break;
+                    default:
+                        mensagemResultadoP.textContent = "Tipo de visto inválido. Por favor, selecione uma opção.";
+                        resultadoCalculadoraDiv.classList.remove('hidden');
+                        return;
+                }
+
+                // Calculate required residency end date
+                const dataElegibilidade = new Date(dataChegada);
+                dataElegibilidade.setFullYear(dataElegibilidade.getFullYear() + anosMinimosResidencia);
+
+                // Adjust for absence days (simplified logic, real cases are more complex)
+                // For naturalization, usually, absences over a certain period (e.g., 90 days in 12 months for some cases)
+                // can reset the clock or require justification. This is a simplified model.
+                // Here, we'll just add the absence days to the eligibility date as a basic adjustment.
+                dataElegibilidade.setDate(dataElegibilidade.getDate() + diasAusencia);
+
+                const hoje = new Date();
+                let mensagem = "";
+
+                if (dataElegibilidade <= hoje) {
+                    mensagem = `Parabéns! Você já pode ser elegível para solicitar a naturalização brasileira. Sugerimos que entre em contato com a Migra BR para iniciar seu processo.`;
+                } else {
+                    const diffTime = Math.abs(dataElegibilidade.getTime() - hoje.getTime());
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    const diffMonths = Math.floor(diffDays / 30.44); // Average days in a month
+                    const diffYears = Math.floor(diffMonths / 12);
+
+                    let tempoRestante = [];
+                    if (diffYears > 0) tempoRestante.push(`${diffYears} ano(s)`);
+                    if (diffMonths % 12 > 0) tempoRestante.push(`${diffMonths % 12} mês(es)`);
+                    if (diffDays % 30.44 > 0 && diffMonths % 12 === 0 && diffYears === 0) tempoRestante.push(`${diffDays} dia(s)`); // Show days only if less than a month and no years
+
+                    const dataFormatada = dataElegibilidade.toLocaleDateString('pt-BR');
+                    mensagem = `Você poderá ser elegível para solicitar a naturalização brasileira em aproximadamente ${tempoRestante.join(' e ')} (por volta de ${dataFormatada}). Entre em contato com a Migra BR para mais detalhes.`;
+                }
+
+                mensagemResultadoP.textContent = mensagem;
+                resultadoCalculadoraDiv.classList.remove('hidden');
+            });
+
+            // Quiz Logic
+            const quizQuestions = [
+                {
+                    question: "Há quantos anos você reside no Brasil?",
+                    options: [
+                        { text: "Menos de 1 ano", value: 1 },
+                        { text: "Entre 1 e 4 anos", value: 2 },
+                        { text: "Entre 5 e 14 anos", value: 3 },
+                        { text: "15 anos ou mais", value: 4 }
+                    ]
+                },
+                {
+                    question: "Qual sua situação migratória atual no Brasil?",
+                    options: [
+                        { text: "Visto de turista ou temporário", value: 1 },
+                        { text: "Residência permanente (CRNM)", value: 2 },
+                        { text: "Sou de país de língua portuguesa", value: 3 },
+                        { text: "Casado(a) ou com filho(a) brasileiro(a)", value: 4 }
+                    ]
+                },
+                {
+                    question: "Você possui algum parente brasileiro (cônjuge, filho, pai/mãe)?",
+                    options: [
+                        { text: "Não", value: 1 },
+                        { text: "Sim, cônjuge ou filho(a)", value: 2 },
+                        { text: "Sim, pai/mãe", value: 3 }
+                    ]
+                },
+                {
+                    question: "Qual o seu nível de interesse em obter a naturalização brasileira?",
+                    options: [
+                        { text: "Apenas curiosidade", value: 1 },
+                        { text: "Interesse moderado, buscando informações", value: 2 },
+                        { text: "Muito interessado, quero iniciar o processo", value: 3 }
+                    ]
+                }
+            ];
+
+            let currentQuizQuestionIndex = 0; // Renamed to avoid conflict
+            let quizScore = 0; // Simple score for profile determination
+
+            const quizContainer = document.getElementById('quizContainer');
+            const quizQuestion = document.getElementById('quizQuestion');
+            const quizOptions = document.getElementById('quizOptions');
+            const quizResult = document.getElementById('quizResult');
+            const quizResultMessage = document.getElementById('quizResultMessage');
+            const progressBar = document.getElementById('progressBar');
+            const restartQuizBtn = document.getElementById('restartQuiz');
+
+            function loadQuizQuestion() { // Renamed
+                if (currentQuizQuestionIndex < quizQuestions.length) {
+                    const questionData = quizQuestions[currentQuizQuestionIndex];
+                    quizQuestion.textContent = questionData.question;
+                    quizOptions.innerHTML = ''; // Clear previous options
+
+                    questionData.options.forEach(option => {
+                        const button = document.createElement('button');
+                        button.textContent = option.text;
+                        button.classList.add('quiz-option-btn');
+                        button.setAttribute('data-value', option.value);
+                        button.addEventListener('click', handleQuizAnswerClick); // Renamed
+                        quizOptions.appendChild(button);
+                    });
+                    updateProgressBar();
+                    quizContainer.classList.remove('hidden');
+                    quizResult.classList.add('hidden');
+                } else {
+                    displayQuizResult();
+                }
+            }
+
+            function handleQuizAnswerClick(event) { // Renamed
+                const selectedValue = parseInt(event.target.getAttribute('data-value'));
+                quizScore += selectedValue;
+
+                // Visually mark selected button
+                Array.from(quizOptions.children).forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                event.target.classList.add('selected');
+
+                // Move to next question after a short delay for visual feedback
+                setTimeout(() => {
+                    currentQuizQuestionIndex++;
+                    loadQuizQuestion();
+                }, 300);
+            }
+
+            function updateProgressBar() {
+                const progress = (currentQuizQuestionIndex / quizQuestions.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            function displayQuizResult() {
+                quizContainer.classList.add('hidden');
+                quizResult.classList.remove('hidden');
+
+                let profileLevel = "";
+                let nextSteps = "";
+
+                if (quizScore <= 5) {
+                    profileLevel = "Nível Básico";
+                    nextSteps = "Seu perfil indica que você está no início da sua jornada. Recomendamos focar na regularização inicial e buscar informações sobre os tipos de visto. A Migra BR pode te ajudar a dar os primeiros passos.";
+                } else if (quizScore <= 9) {
+                    profileLevel = "Nível Intermediário";
+                    nextSteps = "Você já tem alguma experiência no Brasil. É um bom momento para revisar sua situação migratória e explorar as opções de residência permanente ou naturalização. Fale com nossos especialistas para um plano personalizado.";
+                } else {
+                    profileLevel = "Nível Avançado";
+                    nextSteps = "Seu perfil sugere que você está próximo ou já é elegível para a naturalização. Não perca tempo! Entre em contato com a Migra BR para iniciar seu processo e realizar o sonho da cidadania brasileira.";
+                }
+
+                quizResultMessage.innerHTML = `**Nível:** ${profileLevel}<br><br>**Próximos Passos:** ${nextSteps}`;
+            }
+
+            restartQuizBtn.addEventListener('click', function() {
+                currentQuizQuestionIndex = 0;
+                quizScore = 0;
+                loadQuizQuestion();
+            });
+
+            // Initial load for Quiz
+            loadQuizQuestion();
+
+
+            // Dynamic Form Logic
+            const dynamicFormSteps = [
+                {
+                    id: 'step1_nationality',
+                    question: "Qual é a sua nacionalidade?",
+                    type: 'options',
+                    options: [
+                        { text: "País de língua portuguesa (Ex: Portugal, Angola)", value: "portugues" },
+                        { text: "País do Mercosul (Ex: Argentina, Uruguai)", value: "mercosul" },
+                        { text: "Outro país", value: "outro" }
+                    ],
+                    next: (answer) => {
+                        if (answer === 'portugues' || answer === 'mercosul') return 'step2_time_simplified';
+                        return 'step2_time_full';
+                    }
+                },
+                {
+                    id: 'step2_time_simplified',
+                    question: "Há quanto tempo você reside no Brasil?",
+                    type: 'options',
+                    options: [
+                        { text: "Menos de 1 ano", value: "less_1" },
+                        { text: "1 ano ou mais", value: "1_plus" }
+                    ],
+                    next: (answer, responses) => {
+                        if (responses.step1_nationality === 'portugues' && answer === '1_plus') return 'result_portugues_eligible';
+                        if (responses.step1_nationality === 'mercosul' && answer === '1_plus') return 'result_mercosul_eligible';
+                        return 'result_initial_guidance';
+                    }
+                },
+                {
+                    id: 'step2_time_full',
+                    question: "Há quanto tempo você reside no Brasil?",
+                    type: 'options',
+                    options: [
+                        { text: "Menos de 1 ano", value: "less_1" },
+                        { text: "Entre 1 e 4 anos", value: "1_to_4" },
+                        { text: "5 anos ou mais", value: "5_plus" }
+                    ],
+                    next: (answer, responses) => {
+                        if (answer === '5_plus') return 'step3_status_5plus';
+                        return 'step3_status_general';
+                    }
+                },
+                {
+                    id: 'step3_status_5plus',
+                    question: "Qual é o seu status migratório atual no Brasil?",
+                    type: 'options',
+                    options: [
+                        { text: "Residência permanente (CRNM)", value: "permanente" },
+                        { text: "Casado(a) ou com filho(a) brasileiro(a)", value: "familia" },
+                        { text: "Refugiado(a)", value: "refugiado" },
+                        { text: "Outro", value: "outro_status" }
+                    ],
+                    next: (answer) => {
+                        if (answer === 'permanente' || answer === 'familia' || answer === 'refugiado') return 'result_potential_naturalization';
+                        return 'result_complex_case';
+                    }
+                },
+                {
+                    id: 'step3_status_general',
+                    question: "Qual é o seu status migratório atual no Brasil?",
+                    type: 'options',
+                    options: [
+                        { text: "Visto de turista ou temporário", value: "turista_temp" },
+                        { text: "Residência permanente (CRNM)", value: "permanente" },
+                        { text: "Casado(a) ou com filho(a) brasileiro(a)", value: "familia" },
+                        { text: "Refugiado(a)", value: "refugiado" },
+                        { text: "Outro", value: "outro_status" }
+                    ],
+                    next: (answer) => {
+                        if (answer === 'turista_temp') return 'result_initial_guidance';
+                        if (answer === 'permanente') return 'result_residency_focus';
+                        if (answer === 'familia') return 'result_family_path';
+                        if (answer === 'refugiado') return 'result_refugee_path';
+                        return 'result_complex_case';
+                    }
+                }
+            ];
+
+            const dynamicFormResults = {
+                'result_portugues_eligible': {
+                    title: "Parabéns! Você pode ser elegível para Naturalização por ser de País de Língua Portuguesa.",
+                    message: "Cidadãos de países de língua portuguesa com 1 ano de residência contínua no Brasil podem solicitar a naturalização. Entre em contato com a Migra BR para iniciar seu processo!"
+                },
+                'result_mercosul_eligible': {
+                    title: "Parabéns! Você pode ser elegível para Naturalização por Acordo Mercosul.",
+                    message: "Cidadãos de países do Mercosul com 2 anos de residência contínua no Brasil (em alguns casos, 1 ano para cônjuge/filho brasileiro) podem solicitar a naturalização. A Migra BR pode te auxiliar em cada etapa."
+                },
+                'result_potential_naturalization': {
+                    title: "Seu perfil indica alta elegibilidade para Naturalização.",
+                    message: "Com 5 anos ou mais de residência e um status migratório estável, você provavelmente atende aos requisitos básicos para naturalização. Recomendamos uma consulta imediata com a Migra BR para formalizar seu pedido."
+                },
+                'result_initial_guidance': {
+                    title: "Orientação Inicial para Sua Regularização.",
+                    message: "Seu perfil sugere que o primeiro passo é a regularização da sua situação migratória no Brasil (obtenção de visto e/ou residência). A Migra BR pode te guiar para o caminho certo."
+                },
+                'result_residency_focus': {
+                    title: "Foco na Residência Permanente.",
+                    message: "Com sua residência permanente, você está no caminho certo. Dependendo do seu tempo total no Brasil, o próximo passo pode ser a naturalização. A Migra BR pode analisar seu caso e planejar os próximos passos."
+                },
+                'result_family_path': {
+                    title: "Caminho da Naturalização por Vínculo Familiar.",
+                    message: "Ter um cônjuge ou filho(a) brasileiro(a) pode reduzir o tempo de residência exigido para naturalização para apenas 1 ano. Entre em contato com a Migra BR para agilizar seu processo."
+                },
+                'result_refugee_path': {
+                    title: "Caminho da Naturalização para Refugiados.",
+                    message: "Refugiados reconhecidos no Brasil podem solicitar a naturalização após 4 anos de residência. A Migra BR oferece suporte especializado para este processo."
+                },
+                'result_complex_case': {
+                    title: "Seu caso requer análise especializada.",
+                    message: "Sua situação é única e pode envolver requisitos específicos. Para uma orientação precisa e um plano de ação, é essencial conversar com um de nossos especialistas. Clique em 'Fale Conosco' para agendar uma consulta."
+                }
+            };
+
+            let currentDynamicFormStepIndex = 0;
+            let userResponses = {};
+            let history = []; // To store previous steps for 'back' button
+
+            const dynamicFormContainer = document.getElementById('dynamicFormContainer');
+            const dynamicFormQuestion = document.getElementById('dynamicFormQuestion');
+            const dynamicFormOptions = document.getElementById('dynamicFormOptions');
+            const dynamicFormResult = document.getElementById('dynamicFormResult');
+            const dynamicFormResultMessage = document.getElementById('dynamicFormResultMessage');
+            const dynamicFormBackBtn = document.getElementById('dynamicFormBackBtn');
+            const dynamicFormNextBtn = document.getElementById('dynamicFormNextBtn');
+            const restartDynamicFormBtn = document.getElementById('restartDynamicForm');
+
+            function loadDynamicFormStep() {
+                dynamicFormResult.classList.add('hidden'); // Hide result if visible
+                dynamicFormContainer.classList.remove('hidden'); // Show form container
+
+                const currentStep = dynamicFormSteps[currentDynamicFormStepIndex];
+                dynamicFormQuestion.textContent = currentStep.question;
+                dynamicFormOptions.innerHTML = ''; // Clear previous options
+
+                // Hide/show navigation buttons
+                dynamicFormBackBtn.classList.toggle('hidden', history.length === 0);
+                dynamicFormNextBtn.classList.add('hidden'); // Hide next by default for options
+
+                if (currentStep.type === 'options') {
+                    currentStep.options.forEach(option => {
+                        const button = document.createElement('button');
+                        button.textContent = option.text;
+                        button.classList.add('dynamic-form-option-btn');
+                        button.setAttribute('data-value', option.value);
+                        button.addEventListener('click', handleDynamicFormOptionClick);
+                        dynamicFormOptions.appendChild(button);
+                    });
+                }
+                // Add more input types here if needed (e.g., 'text', 'date')
+            }
+
+            function handleDynamicFormOptionClick(event) {
+                const selectedValue = event.target.getAttribute('data-value');
+                const currentStep = dynamicFormSteps[currentDynamicFormStepIndex];
+
+                // Store response
+                userResponses[currentStep.id] = selectedValue;
+
+                // Visually mark selected button
+                Array.from(dynamicFormOptions.children).forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                event.target.classList.add('selected');
+
+                // Determine next step
+                const nextStepId = currentStep.next(selectedValue, userResponses);
+
+                // Add current step to history before moving
+                history.push(currentDynamicFormStepIndex);
+
+                // Find the index of the next step
+                const nextStepIndex = dynamicFormSteps.findIndex(step => step.id === nextStepId);
+
+                if (nextStepIndex !== -1) {
+                    currentDynamicFormStepIndex = nextStepIndex;
+                    setTimeout(loadDynamicFormStep, 300); // Small delay for visual feedback
+                } else {
+                    // It's a result ID
+                    displayDynamicFormResult(nextStepId);
+                }
+            }
+
+            function displayDynamicFormResult(resultId) {
+                dynamicFormContainer.classList.add('hidden');
+                dynamicFormResult.classList.remove('hidden');
+
+                const resultData = dynamicFormResults[resultId];
+                if (resultData) {
+                    dynamicFormResultMessage.innerHTML = `<strong>${resultData.title}</strong><br><br>${resultData.message}`;
+                } else {
+                    dynamicFormResultMessage.textContent = "Não foi possível determinar um resultado específico. Por favor, recomece ou entre em contato.";
+                }
+            }
+
+            dynamicFormBackBtn.addEventListener('click', function() {
+                if (history.length > 0) {
+                    currentDynamicFormStepIndex = history.pop(); // Go back to the previous step
+                    loadDynamicFormStep();
+                }
+            });
+
+            restartDynamicFormBtn.addEventListener('click', function() {
+                currentDynamicFormStepIndex = 0;
+                userResponses = {};
+                history = [];
+                loadDynamicFormStep();
+            });
+
+            // Initial load for Dynamic Form
+            loadDynamicFormStep();
+        });
+    </script>
+
+</body>
+</html>
