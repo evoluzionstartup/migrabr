@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Migra BR - Perguntas Frequentes sobre Imigração</title>
+    <!-- CDN do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind: bg-slate-50 */
+            color: #1e293b; /* Tailwind: text-slate-800 */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #3b82f6, #60a5fa); /* Tailwind: from-blue-500 to-blue-400 */
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out;
+        }
+        /* Estilos para o FAQ Acordeão */
+        .faq-item {
+            @apply border-b border-gray-200 py-4;
+        }
+        .faq-question {
+            @apply flex justify-between items-center cursor-pointer text-lg font-semibold text-slate-800 hover:text-blue-600;
+        }
+        .faq-answer {
+            @apply mt-2 text-slate-600 hidden; /* Escondido por padrão */
+        }
+        .faq-question svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-question.active svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Seção do Cabeçalho -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">Migra BR</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html#servicos" class="text-slate-700 hover:text-blue-600 font-medium">Serviços</a>
+                <a href="index.html#quem-somos" class="text-slate-700 hover:text-blue-600 font-medium">Quem Somos</a>
+                <a href="index.html#depoimentos" class="text-slate-700 hover:text-blue-600 font-medium">Depoimentos</a>
+                <a href="index.html#informacoes-uteis" class="text-slate-700 hover:text-blue-600 font-medium">Informações Úteis</a>
+                <a href="index.html#calculadora-elegibilidade" class="text-slate-700 hover:text-blue-600 font-medium">Calculadora</a>
+                <a href="index.html#quiz-imigrante" class="text-slate-700 hover:text-blue-600 font-medium">Quiz</a>
+                <a href="index.html#formulario-dinamico" class="text-slate-700 hover:text-blue-600 font-medium">Assistente Migratório</a>
+                <a href="blog.html" class="text-slate-700 hover:text-blue-600 font-medium">Blog</a>
+                <a href="faq.html" class="text-blue-600 font-medium">FAQ</a> <!-- Link ativo para o FAQ -->
+                <a href="index.html#contato" class="text-slate-700 hover:text-blue-600 font-medium">Contato</a>
+            </nav>
+            <!-- Botão do Menu Mobile (Hamburger) - Funcionalidade JS não incluída nesta página dedicada para simplicidade -->
+            <button class="md:hidden text-slate-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Principal do FAQ -->
+    <section class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-slate-800">Perguntas Frequentes (FAQ)</h1>
+            <p class="text-lg text-center text-slate-700 mb-12 max-w-3xl mx-auto">
+                Encontre respostas para as dúvidas mais comuns sobre processos migratórios, vida no Brasil e os serviços da Migra BR.
+            </p>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Item de FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Qual a diferença entre visto e residência permanente?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">O visto é uma autorização para entrar e permanecer no país por um período determinado e para uma finalidade específica (turismo, estudo, trabalho). A residência permanente, por outro lado, concede o direito de morar no Brasil por tempo indeterminado, com mais direitos e deveres, como acesso a serviços públicos e a possibilidade de solicitar a naturalização.</p>
+                    </div>
+                </div>
+                <!-- Item de FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Posso trabalhar no Brasil com visto de turista?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Não, o visto de turista não permite o exercício de atividade remunerada no Brasil. Para trabalhar legalmente, é necessário obter um visto de trabalho ou uma autorização de residência com fins laborais. A Migra BR pode te orientar sobre as melhores opções para sua situação.</p>
+                    </div>
+                </div>
+                <!-- Item de FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Quanto tempo leva o processo de naturalização?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">O tempo pode variar bastante dependendo do tipo de naturalização (ordinária, provisória, especial), da sua situação individual e da agilidade dos órgãos responsáveis. Geralmente, pode levar de alguns meses a alguns anos. A Migra BR pode te dar uma estimativa mais precisa após analisar seu caso em detalhes.</p>
+                    </div>
+                </div>
+                <!-- Item de FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Preciso de advogado para o processo migratório?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Embora não seja obrigatório em todos os casos, a assistência de um profissional especializado como a Migra BR é altamente recomendada. Isso evita erros comuns, agiliza o processo e aumenta suas chances de sucesso, especialmente em casos mais complexos ou com particularidades.</p>
+                    </div>
+                </div>
+                <!-- Item de FAQ 5 (Novo) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Quais são os documentos necessários para a residência permanente?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Os documentos variam conforme o tipo de solicitação de residência (por reunião familiar, investimento, trabalho, etc.). Geralmente, incluem passaporte, certidão de nascimento/casamento, comprovante de residência, antecedentes criminais, entre outros. A Migra BR fornece uma lista detalhada e auxilia na organização.</p>
+                    </div>
+                </div>
+                <!-- Item de FAQ 6 (Novo) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>A Migra BR oferece suporte para brasileiros no exterior?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Nosso foco principal é auxiliar estrangeiros a se regularizarem no Brasil. No entanto, podemos oferecer orientações básicas para brasileiros que desejam retornar ao país ou indicar parceiros especializados em mobilidade internacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato (rodapé simplificado para páginas dedicadas) -->
+    <section id="contato" class="py-16 md:py-24 bg-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">Ainda tem Dúvidas? Fale Conosco!</h2>
+            <p class="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
+                Nossa equipe está pronta para te ajudar em cada passo do caminho. Entre em contato e tire suas dúvidas!
+            </p>
+            <a href="index.html#contato" class="btn-primary">Fale Conosco Agora</a>
+        </div>
+    </section>
+
+    <!-- Seção do Rodapé -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Migra BR. Todos os direitos reservados.</p>
+            <p class="mb-2">Um projeto de: Evoluzion Startup</p>
+            <p>Alameda Rio Negro, 503 Sl. 2020 - Barueri/SP - 06454-000</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-slate-300 hover:text-blue-400">Política de Privacidade</a>
+                <a href="#" class="text-slate-300 hover:text-blue-400">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica do Acordeão FAQ (copiada da landing page)
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling; // Pega o próximo irmão, que é o div da resposta
+
+                    // Fecha todas as outras respostas abertas
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.display = 'none';
+                        }
+                    });
+
+                    // Alterna a resposta clicada
+                    question.classList.toggle('active');
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
