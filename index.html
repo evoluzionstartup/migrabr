@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Migra BR - Sua Jornada no Brasil Começa Aqui</title>
-    <!-- Tailwind CSS CDN -->
+    <!-- CDN do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for WhatsApp icon -->
+    <!-- Font Awesome para o ícone do WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -62,11 +62,28 @@
         .dynamic-form-option-btn.selected {
             @apply bg-blue-600 text-white border-blue-600;
         }
+
+        /* Estilos para o FAQ Acordeão */
+        .faq-item {
+            @apply border-b border-gray-200 py-4;
+        }
+        .faq-question {
+            @apply flex justify-between items-center cursor-pointer text-lg font-semibold text-slate-800 hover:text-blue-600;
+        }
+        .faq-answer {
+            @apply mt-2 text-slate-600 hidden; /* Escondido por padrão */
+        }
+        .faq-question svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-question.active svg {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header Section -->
+    <!-- Seção do Cabeçalho -->
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600">Migra BR</a>
@@ -77,18 +94,20 @@
                 <a href="#informacoes-uteis" class="text-slate-700 hover:text-blue-600 font-medium">Informações Úteis</a>
                 <a href="#calculadora-elegibilidade" class="text-slate-700 hover:text-blue-600 font-medium">Calculadora</a>
                 <a href="#quiz-imigrante" class="text-slate-700 hover:text-blue-600 font-medium">Quiz</a>
-                <!-- Novo link de navegação para Formulário Dinâmico -->
                 <a href="#formulario-dinamico" class="text-slate-700 hover:text-blue-600 font-medium">Assistente Migratório</a>
+                <!-- Links de navegação atualizados para Blog e FAQ -->
+                <a href="blog.html" class="text-slate-700 hover:text-blue-600 font-medium">Blog</a>
+                <a href="faq.html" class="text-slate-700 hover:text-blue-600 font-medium">FAQ</a>
                 <a href="#contato" class="text-slate-700 hover:text-blue-600 font-medium">Contato</a>
             </nav>
-            <!-- Mobile Menu Button (Hamburger) -->
+            <!-- Botão do Menu Mobile (Hamburger) -->
             <button class="md:hidden text-slate-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Seção Hero -->
     <section class="gradient-bg text-white py-20 md:py-32 text-center">
         <div class="container mx-auto px-4">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
@@ -103,7 +122,7 @@
         </div>
     </section>
 
-    <!-- Services/Benefits Section -->
+    <!-- Seção de Serviços/Benefícios -->
     <section id="servicos" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Por Que Escolher a Migra BR?</h2>
@@ -133,7 +152,7 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- Seção Quem Somos -->
     <section id="quem-somos" class="py-16 md:py-24 bg-slate-50">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
@@ -151,7 +170,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Seção de Depoimentos -->
     <section id="depoimentos" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">O Que Nossos Clientes Dizem</h2>
@@ -172,7 +191,7 @@
         </div>
     </section>
 
-    <!-- Informative Section -->
+    <!-- Seção Informativa -->
     <section id="informacoes-uteis" class="py-16 md:py-24 bg-slate-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Informações Úteis para Imigrantes</h2>
@@ -217,7 +236,7 @@
         </div>
     </section>
 
-    <!-- Calculator Section -->
+    <!-- Seção da Calculadora -->
     <section id="calculadora-elegibilidade" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Calculadora de Elegibilidade para Naturalização</h2>
@@ -262,7 +281,7 @@
         </div>
     </section>
 
-    <!-- Quiz Section -->
+    <!-- Seção do Quiz -->
     <section id="quiz-imigrante" class="py-16 md:py-24 bg-slate-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Quiz: Descubra Seu Perfil de Imigrante</h2>
@@ -274,10 +293,10 @@
                     <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
                 </div>
                 <div id="quizContainer">
-                    <!-- Questions will be loaded here by JavaScript -->
+                    <!-- As perguntas serão carregadas aqui pelo JavaScript -->
                     <p id="quizQuestion" class="text-xl font-semibold mb-6 text-slate-800"></p>
                     <div id="quizOptions" class="space-y-4">
-                        <!-- Options will be loaded here by JavaScript -->
+                        <!-- As opções serão carregadas aqui pelo JavaScript -->
                     </div>
                 </div>
                 <div id="quizResult" class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 hidden">
@@ -290,7 +309,7 @@
         </div>
     </section>
 
-    <!-- Dynamic Form Section -->
+    <!-- Seção do Formulário Dinâmico -->
     <section id="formulario-dinamico" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Assistente Migratório Interativo</h2>
@@ -299,10 +318,10 @@
             </p>
             <div class="max-w-xl mx-auto card p-8">
                 <div id="dynamicFormContainer">
-                    <!-- Dynamic form content will be loaded here by JavaScript -->
+                    <!-- O conteúdo do formulário dinâmico será carregado aqui pelo JavaScript -->
                     <p id="dynamicFormQuestion" class="text-xl font-semibold mb-6 text-slate-800"></p>
                     <div id="dynamicFormOptions" class="space-y-4">
-                        <!-- Options/Inputs will be loaded here by JavaScript -->
+                        <!-- As opções/inputs serão carregadas aqui pelo JavaScript -->
                     </div>
                     <div class="flex justify-between mt-6">
                         <button id="dynamicFormBackBtn" class="btn-primary bg-gray-500 hover:bg-gray-600 hidden">Voltar</button>
@@ -319,7 +338,89 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Seção do Blog -->
+    <section id="blog" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Últimas Notícias e Artigos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card do Post do Blog 1 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Blog+Post+1" alt="Imagem do Blog Post 1" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Guia Completo para Obter seu Visto de Trabalho no Brasil</h3>
+                    <p class="text-slate-600 text-sm mb-4">Descubra os requisitos, documentos e etapas para conseguir seu visto de trabalho e iniciar sua carreira no Brasil.</p>
+                    <a href="blog-post-1.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <!-- Card do Post do Blog 2 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Blog+Post+2" alt="Imagem do Blog Post 2" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Naturalização Brasileira: Mitos e Verdades</h3>
+                    <p class="text-slate-600 text-sm mb-4">Desvendamos os principais mitos sobre o processo de naturalização e esclarecemos as verdades para você.</p>
+                    <a href="blog-post-2.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+                <!-- Card do Post do Blog 3 -->
+                <div class="card">
+                    <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Blog+Post+3" alt="Imagem do Blog Post 3" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Como o SUS Funciona para Imigrantes no Brasil</h3>
+                    <p class="text-slate-600 text-sm mb-4">Entenda seus direitos de acesso à saúde pública no Brasil e como utilizar o Sistema Único de Saúde (SUS).</p>
+                    <a href="blog-post-3.html" class="text-blue-600 hover:underline font-medium">Leia Mais &rarr;</a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="blog.html" class="btn-primary">Ver Todos os Artigos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de FAQ -->
+    <section id="faq-section" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Perguntas Frequentes (FAQ)</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Qual a diferença entre visto e residência permanente?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">O visto é uma autorização para entrar e permanecer no país por um período determinado e para uma finalidade específica (turismo, estudo, trabalho). A residência permanente, por outro lado, concede o direito de morar no Brasil por tempo indeterminado, com mais direitos e deveres.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Posso trabalhar no Brasil com visto de turista?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Não, o visto de turista não permite o exercício de atividade remunerada no Brasil. Para trabalhar legalmente, é necessário obter um visto de trabalho ou uma autorização de residência com fins laborais.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Quanto tempo leva o processo de naturalização?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">O tempo pode variar bastante dependendo do tipo de naturalização (ordinária, provisória, especial), da sua situação individual e da agilidade dos órgãos responsáveis. Geralmente, pode levar de alguns meses a alguns anos. A Migra BR pode te dar uma estimativa mais precisa após analisar seu caso.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left" aria-expanded="false">
+                        <span>Preciso de advogado para o processo migratório?</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="py-2">Embora não seja obrigatório em todos os casos, a assistência de um profissional especializado como a Migra BR é altamente recomendada. Isso evita erros comuns, agiliza o processo e aumenta suas chances de sucesso, especialmente em casos mais complexos.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Botão "Ver Mais Perguntas Frequentes" -->
+            <div class="text-center mt-12">
+                <a href="faq.html" class="btn-primary">Ver Mais Perguntas Frequentes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
     <section id="contato" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">Fale Conosco</h2>
@@ -351,7 +452,7 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Seção do Rodapé -->
     <footer class="bg-slate-800 text-white py-8">
         <div class="container mx-auto px-4 text-center">
             <p class="mb-2">&copy; 2024 Migra BR. Todos os direitos reservados.</p>
@@ -364,7 +465,7 @@
         </div>
     </footer>
 
-    <!-- Floating CTA Buttons -->
+    <!-- Botões Flutuantes de CTA -->
     <div class="floating-cta">
         <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Migra%20BR." target="_blank" class="btn-whatsapp">
             <i class="fab fa-whatsapp mr-2"></i> WhatsApp
@@ -376,7 +477,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Calculator Logic
+            // Lógica da Calculadora
             const dataChegadaInput = document.getElementById('dataChegada');
             const tipoVistoSelect = document.getElementById('tipoVisto');
             const diasAusenciaInput = document.getElementById('diasAusencia');
@@ -395,7 +496,7 @@
                     return;
                 }
 
-                const dataChegada = new Date(dataChegadaStr + 'T00:00:00'); // Add T00:00:00 to avoid timezone issues
+                const dataChegada = new Date(dataChegadaStr + 'T00:00:00'); // Adiciona T00:00:00 para evitar problemas de fuso horário
                 let anosMinimosResidencia = 0;
 
                 switch (tipoVisto) {
@@ -420,14 +521,14 @@
                         return;
                 }
 
-                // Calculate required residency end date
+                // Calcula a data final de residência necessária
                 const dataElegibilidade = new Date(dataChegada);
                 dataElegibilidade.setFullYear(dataElegibilidade.getFullYear() + anosMinimosResidencia);
 
-                // Adjust for absence days (simplified logic, real cases are more complex)
-                // For naturalization, usually, absences over a certain period (e.g., 90 days in 12 months for some cases)
-                // can reset the clock or require justification. This is a simplified model.
-                // Here, we'll just add the absence days to the eligibility date as a basic adjustment.
+                // Ajusta para dias de ausência (lógica simplificada, casos reais são mais complexos)
+                // Para naturalização, geralmente, ausências acima de um certo período (ex: 90 dias em 12 meses para alguns casos)
+                // podem reiniciar o contador ou exigir justificativa. Este é um modelo simplificado.
+                // Aqui, apenas adicionaremos os dias de ausência à data de elegibilidade como um ajuste básico.
                 dataElegibilidade.setDate(dataElegibilidade.getDate() + diasAusencia);
 
                 const hoje = new Date();
@@ -438,13 +539,13 @@
                 } else {
                     const diffTime = Math.abs(dataElegibilidade.getTime() - hoje.getTime());
                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                    const diffMonths = Math.floor(diffDays / 30.44); // Average days in a month
+                    const diffMonths = Math.floor(diffDays / 30.44); // Média de dias em um mês
                     const diffYears = Math.floor(diffMonths / 12);
 
                     let tempoRestante = [];
                     if (diffYears > 0) tempoRestante.push(`${diffYears} ano(s)`);
                     if (diffMonths % 12 > 0) tempoRestante.push(`${diffMonths % 12} mês(es)`);
-                    if (diffDays % 30.44 > 0 && diffMonths % 12 === 0 && diffYears === 0) tempoRestante.push(`${diffDays} dia(s)`); // Show days only if less than a month and no years
+                    if (diffDays % 30.44 > 0 && diffMonths % 12 === 0 && diffYears === 0) tempoRestante.push(`${diffDays} dia(s)`); // Mostra dias apenas se for menos de um mês e não houver anos
 
                     const dataFormatada = dataElegibilidade.toLocaleDateString('pt-BR');
                     mensagem = `Você poderá ser elegível para solicitar a naturalização brasileira em aproximadamente ${tempoRestante.join(' e ')} (por volta de ${dataFormatada}). Entre em contato com a Migra BR para mais detalhes.`;
@@ -454,7 +555,7 @@
                 resultadoCalculadoraDiv.classList.remove('hidden');
             });
 
-            // Quiz Logic
+            // Lógica do Quiz
             const quizQuestions = [
                 {
                     question: "Há quantos anos você reside no Brasil?",
@@ -492,8 +593,8 @@
                 }
             ];
 
-            let currentQuizQuestionIndex = 0; // Renamed to avoid conflict
-            let quizScore = 0; // Simple score for profile determination
+            let currentQuizQuestionIndex = 0;
+            let quizScore = 0;
 
             const quizContainer = document.getElementById('quizContainer');
             const quizQuestion = document.getElementById('quizQuestion');
@@ -503,18 +604,18 @@
             const progressBar = document.getElementById('progressBar');
             const restartQuizBtn = document.getElementById('restartQuiz');
 
-            function loadQuizQuestion() { // Renamed
+            function loadQuizQuestion() {
                 if (currentQuizQuestionIndex < quizQuestions.length) {
                     const questionData = quizQuestions[currentQuizQuestionIndex];
                     quizQuestion.textContent = questionData.question;
-                    quizOptions.innerHTML = ''; // Clear previous options
+                    quizOptions.innerHTML = ''; // Limpa as opções anteriores
 
                     questionData.options.forEach(option => {
                         const button = document.createElement('button');
                         button.textContent = option.text;
                         button.classList.add('quiz-option-btn');
                         button.setAttribute('data-value', option.value);
-                        button.addEventListener('click', handleQuizAnswerClick); // Renamed
+                        button.addEventListener('click', handleQuizAnswerClick);
                         quizOptions.appendChild(button);
                     });
                     updateProgressBar();
@@ -525,17 +626,17 @@
                 }
             }
 
-            function handleQuizAnswerClick(event) { // Renamed
+            function handleQuizAnswerClick(event) {
                 const selectedValue = parseInt(event.target.getAttribute('data-value'));
                 quizScore += selectedValue;
 
-                // Visually mark selected button
+                // Marca visualmente o botão selecionado
                 Array.from(quizOptions.children).forEach(btn => {
                     btn.classList.remove('selected');
                 });
                 event.target.classList.add('selected');
 
-                // Move to next question after a short delay for visual feedback
+                // Avança para a próxima pergunta após um pequeno atraso para feedback visual
                 setTimeout(() => {
                     currentQuizQuestionIndex++;
                     loadQuizQuestion();
@@ -574,11 +675,10 @@
                 loadQuizQuestion();
             });
 
-            // Initial load for Quiz
             loadQuizQuestion();
 
 
-            // Dynamic Form Logic
+            // Lógica do Formulário Dinâmico
             const dynamicFormSteps = [
                 {
                     id: 'step1_nationality',
@@ -695,7 +795,7 @@
 
             let currentDynamicFormStepIndex = 0;
             let userResponses = {};
-            let history = []; // To store previous steps for 'back' button
+            let history = [];
 
             const dynamicFormContainer = document.getElementById('dynamicFormContainer');
             const dynamicFormQuestion = document.getElementById('dynamicFormQuestion');
@@ -707,16 +807,15 @@
             const restartDynamicFormBtn = document.getElementById('restartDynamicForm');
 
             function loadDynamicFormStep() {
-                dynamicFormResult.classList.add('hidden'); // Hide result if visible
-                dynamicFormContainer.classList.remove('hidden'); // Show form container
+                dynamicFormResult.classList.add('hidden');
+                dynamicFormContainer.classList.remove('hidden');
 
                 const currentStep = dynamicFormSteps[currentDynamicFormStepIndex];
                 dynamicFormQuestion.textContent = currentStep.question;
-                dynamicFormOptions.innerHTML = ''; // Clear previous options
+                dynamicFormOptions.innerHTML = '';
 
-                // Hide/show navigation buttons
                 dynamicFormBackBtn.classList.toggle('hidden', history.length === 0);
-                dynamicFormNextBtn.classList.add('hidden'); // Hide next by default for options
+                dynamicFormNextBtn.classList.add('hidden');
 
                 if (currentStep.type === 'options') {
                     currentStep.options.forEach(option => {
@@ -728,36 +827,29 @@
                         dynamicFormOptions.appendChild(button);
                     });
                 }
-                // Add more input types here if needed (e.g., 'text', 'date')
             }
 
             function handleDynamicFormOptionClick(event) {
                 const selectedValue = event.target.getAttribute('data-value');
                 const currentStep = dynamicFormSteps[currentDynamicFormStepIndex];
 
-                // Store response
                 userResponses[currentStep.id] = selectedValue;
 
-                // Visually mark selected button
                 Array.from(dynamicFormOptions.children).forEach(btn => {
                     btn.classList.remove('selected');
                 });
                 event.target.classList.add('selected');
 
-                // Determine next step
                 const nextStepId = currentStep.next(selectedValue, userResponses);
 
-                // Add current step to history before moving
                 history.push(currentDynamicFormStepIndex);
 
-                // Find the index of the next step
                 const nextStepIndex = dynamicFormSteps.findIndex(step => step.id === nextStepId);
 
                 if (nextStepIndex !== -1) {
                     currentDynamicFormStepIndex = nextStepIndex;
-                    setTimeout(loadDynamicFormStep, 300); // Small delay for visual feedback
+                    setTimeout(loadDynamicFormStep, 300);
                 } else {
-                    // It's a result ID
                     displayDynamicFormResult(nextStepId);
                 }
             }
@@ -776,7 +868,7 @@
 
             dynamicFormBackBtn.addEventListener('click', function() {
                 if (history.length > 0) {
-                    currentDynamicFormStepIndex = history.pop(); // Go back to the previous step
+                    currentDynamicFormStepIndex = history.pop();
                     loadDynamicFormStep();
                 }
             });
@@ -788,8 +880,32 @@
                 loadDynamicFormStep();
             });
 
-            // Initial load for Dynamic Form
             loadDynamicFormStep();
+
+            // Lógica do Acordeão FAQ
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling; // Pega o próximo irmão, que é o div da resposta
+
+                    // Fecha todas as outras respostas abertas
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.display = 'none';
+                        }
+                    });
+
+                    // Alterna a resposta clicada
+                    question.classList.toggle('active');
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
         });
     </script>
 
